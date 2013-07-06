@@ -1,0 +1,11 @@
+#php_flag display_startup_errors on
+#php_flag display_errors on
+#php_flag html_errors on
+#php_flag  log_errors on
+#php_value error_log  /home/eristoddle/Dropbox/xampp/debian-logs/dir23_php_error.log
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteRule ^$ public/ [L]
+RewriteRule (.*) public/$1 [L]
+</IfModule>

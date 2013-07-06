@@ -1,0 +1,16 @@
+<?php use Phalcon\Tag; ?>
+
+<h2>Ebay</h2>
+
+<?php echo Tag::form("ebay/search"); ?>
+
+<p>
+    <label for="name">Products</label>
+    <?php echo Tag::textField("query") ?>
+</p>
+
+<p>
+    <?php echo Tag::submitButton("Search") ?>
+</p>
+
+</form>
