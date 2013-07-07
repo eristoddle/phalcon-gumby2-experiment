@@ -4,13 +4,14 @@
 
 <?php echo Tag::form("ebay/search"); ?>
 
-<p>
-    <label for="name">Products</label>
-    <?php echo Tag::textField("query") ?>
-</p>
+<ul class="four columns">
+    <li class="field">
+        <?php echo Tag::textField(array("query","class" => "text input", "placeholder" => "Search Auctions")) ?>
+    </li>
 
-<p>
-    <?php echo Tag::submitButton("Search") ?>
-</p>
+    <li class="large primary btn">
+        <?php echo Tag::submitButton("Search") ?>
+    </li>
+</ul>
 
 </form>

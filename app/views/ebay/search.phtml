@@ -1,0 +1,18 @@
+<div class="ebay wall" data-ss-colspan="4">
+    {% for item in results %}
+        <div class="box" data-id="{{ item['itemId'][0] }}">
+            <div class="image" data-image="{{ item['galleryURL'][0] }}">
+                <div class="medium default btn load-image"><a href="#">Load Image</a></div>
+            </div>
+            <div class="title">
+                {{ item['title'][0] }}
+            </div>
+            <div class="current-price">{{ item['sellingStatus'][0]['currentPrice'][0]['__value__'] }}</div>
+            <div class="bid-count">{{ item['sellingStatus'][0]['bidCount'][0] }}</div>
+        </div>
+    {% endfor %}
+</div>
+
+<pre>
+    <?php //var_dump($results); ?>
+</pre>

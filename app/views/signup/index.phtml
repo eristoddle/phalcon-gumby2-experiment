@@ -1,21 +1,19 @@
 <?php use Phalcon\Tag; ?>
 
-<h2>Sign using this form</h2>
+<h2>Sign Up</h2>
 
-<?php echo Tag::form("signup/register"); ?>
+<?php echo Tag::form("signup/register") ?>
 
-<p>
-    <label for="name">Name</label>
-    <?php echo Tag::textField("name") ?>
-</p>
-
-<p>
-    <label for="name">E-Mail</label>
-    <?php echo Tag::textField("email") ?>
-</p>
-
-<p>
-    <?php echo Tag::submitButton("Register") ?>
-</p>
+    <ul class="four columns">
+        <li class="field">
+            <?php echo Tag::textField(array("name", "class" => "text input", "placeholder" => "Name")) ?>
+        </li>
+        <li class="field">
+            <?php echo Tag::textField(array("email", "class" => "email input", "placeholder" => "Email")) ?>
+        </li>
+        <li class="large primary btn">
+            <?php echo Tag::submitButton("Register") ?>
+        </li>
+    </ul>
 
 </form>

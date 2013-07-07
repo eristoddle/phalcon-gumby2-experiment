@@ -39,14 +39,18 @@ try {
         'view', function () {
             $view = new \Phalcon\Mvc\View();
             $view->setViewsDir('../app/views/');
-            $view->setPartialsDir('../app/common/partials/');
-            $view->setLayoutsDir('../app/common/layouts/');
-            //Volt templates
-            $view->registerEngines(
-                array(
-                    ".phtml" => 'Phalcon\Mvc\View\Engine\Volt'
-                )
-            );
+            $view->setPartialsDir('../app/view/partials/');
+            $view->setLayoutsDir('../app/view/layouts/');
+            $view->registerEngines(array(
+                ".phtml" => function($view, $di) {
+                    $volt = new \Phalcon\Mvc\View\Engine\Volt($view, $di);
+                    $volt->setOptions(array(
+                        "compileAlways" => true,
+                        "compiledPath" => "../app/compiled-templates/"
+                    ));
+                    return $volt;
+                }
+            ));
             return $view;
         }
     );

@@ -1,14 +1,10 @@
 <?php
 class IndexController extends \Phalcon\Mvc\Controller {
     public function indexAction() {
-
-        echo "<h1>Hello!</h1>";
-
-        echo Phalcon\Tag::linkTo("signup", "Sign Up Here!");
-
-        echo "<br>";
-
-        echo Phalcon\Tag::linkTo("ebay", "Ebay");
-
+        echo '<div class="home">';
+        echo '<div class="directory">';
+        echo '<div class="large primary btn">'.Phalcon\Tag::linkTo('signup', 'Sign Up').'</div>';
+        echo '<div class="large primary btn">'.Phalcon\Tag::linkTo("ebay", "Ebay Tools").'</div>';
+        echo '</div></div>';
     }
 }

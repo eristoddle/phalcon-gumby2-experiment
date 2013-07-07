@@ -1,1 +1,22 @@
-// Your custom SCSS should be written here...
+.home{
+  .directory{
+    .btn{
+      margin:5px;
+    }
+  }
+}
+
+.wall{
+  .box{
+    width: 230px;
+    padding: 5px;
+    margin: 5px;
+    color: #ffffff;
+    @media (max-width: 240px) {
+      width: 100%;
+    }
+    @media (max-width: 320px) {
+      width: 50%;
+    }
+  }
+}

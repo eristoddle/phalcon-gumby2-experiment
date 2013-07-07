@@ -19,9 +19,24 @@ class EbayController extends \Phalcon\Mvc\Controller {
 
         $content = $this->getJson($url);
 
-        echo "<pre>";
-        var_dump($content["findItemsByKeywordsResponse"][0]["searchResult"][0]["item"]);
-        echo "</pre>";
+        $this->view->setVar(
+            "results",
+            $content["findItemsByKeywordsResponse"][0]["searchResult"][0]["item"]
+        );
+
+        $this->view->setVar(
+            "toolbar",
+            array(
+                array(
+                    "class" => "only-bids",
+                    "text" => "Bids"
+                ),
+                array(
+                    "class" => "load-images",
+                    "text" => "Images"
+                )
+            )
+        );
 
     }
 

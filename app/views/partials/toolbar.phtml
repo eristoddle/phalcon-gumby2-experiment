@@ -1,0 +1,5 @@
+<div class="fixed toolbar" gumby-fixed="top">
+    {% for button in toolbar %}
+        <div class="medium primary btn {{ button['class'] }}"><a href="#">{{ button['text'] }}</a></div>
+    {% endfor %}
+</div>
