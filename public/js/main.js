@@ -1,63 +1,62 @@
-// Gumby is ready to go
-Gumby.ready(function() {
-
-	// placeholder polyfil
-	if(Gumby.isOldie || Gumby.$dom.find('html').hasClass('ie9')) {
-		$('input, textarea').placeholder();
-	}
+Gumby.ready(function () {
+    // placeholder polyfil
+    if (Gumby.isOldie || Gumby.$dom.find('html').hasClass('ie9')) {
+        $('input, textarea').placeholder();
+    }
 });
 
 // Document ready
-$(function() {
+$(function () {
     $('.wall').freetile();
     $('.directory').freetile();
-    $('.box').each(
-        function(){
+    $('.box').each(function () {
+        var colors = [
+            "#3085d6",
+            "#42a35a",
+            "#ca3838",
+            "#f6b83f"
+        ];
+        var choice = Math.floor((Math.random() * colors.length));
+        $(this).css({
+            'background-color': colors[choice]
+        });
+    });
+    $('.box').click(function (e) {
+        var selected_count;
+        if($(this).attr('data-selected') == 'false'){
+            $(this).attr('data-selected','true');
+            $(this).css({
+                'background-color': '#cccccc'
+            });
+        }else if($(this).attr('data-selected') == 'true'){
+            $(this).attr('data-selected','false');
             var colors = [
                 "#3085d6",
                 "#42a35a",
                 "#ca3838",
                 "#f6b83f"
             ];
-            var choice = Math.floor((Math.random()*colors.length));
+            var choice = Math.floor((Math.random() * colors.length));
             $(this).css({
                 'background-color': colors[choice]
-            });
+            })
         }
-    );
-    $('.load-image').click(
-        function(e){
-            var image = $(this).parent().attr('data-ebay');
-            $(this).parent().append('<img src="'+image+'">');
-            $(this).hide();
-            $('.wall').freetile();
-            e.preventDefault();
+        if (selected_count = $(".box[data-selected='true']").length){
+            $('.selected-count a').text("Selected: " + selected_count);
+            $('.selected-count').show();
+        }else{
+            $('.selected-count').hide();
         }
-    );
-    $('.toolbar .load-images').click(
-        function(){
-            $('.box').each(
-                function(){
-                    var image = $(this).children('.image').attr('data-image');
-                    $(this).children('.image').append('<img src="'+image+'">');
-                    $(this).find('.load-image').hide();
-                }
-            );
-            $('.wall').freetile();
-        }
-    );
-    $('.toolbar .bids-only').click(
-        function(){
-            $('.box').each(
-                function(){
-                    var $biddiv = $(this).find('.bid-count');
-                    if($biddiv.text().length < 1){
-                        $(this).hide();
-                    }
-                }
-            );
-            $('.wall').freetile();
-        }
-    );
+    });
+    $('.only-bids').click(function (e) {
+        $('.box').each(function () {
+            if (!parseInt($(this).attr('data-bids'))) {
+                $(this).remove();
+            }
+        });
+        $(this).hide();
+        $('.wall').freetile();
+        e.preventDefault();
+    });
 });
 

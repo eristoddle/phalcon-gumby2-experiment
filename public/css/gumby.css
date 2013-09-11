@@ -1853,8 +1853,21 @@ body .video.twitch, body .video.youtube.show_controls { padding-top: 30px; }
 .modal.active { z-index: 999999; }
 .modal.active, .modal.active > .content { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
 
+.btn { -webkit-box-shadow: 0px 0px 5px #333333; -moz-box-shadow: 0px 0px 5px #333333; box-shadow: 0px 0px 5px #333333; }
+
+.navbar { -webkit-box-shadow: 0px 0px 5px #333333; -moz-box-shadow: 0px 0px 5px #333333; box-shadow: 0px 0px 5px #333333; }
+
+.toolbar { position: fixed; padding: 5px; z-index: 900; }
+.toolbar .btn { opacity: 0.75; }
+.toolbar .btn.selected-count { visibility: hidden; display: none; }
+
 .home .directory .btn { margin: 5px; }
 
-.wall .box { width: 230px; padding: 5px; margin: 5px; color: #ffffff; }
-@media (max-width: 240px) { .wall .box { width: 100%; } }
-@media (max-width: 320px) { .wall .box { width: 50%; } }
+.wall .box { width: 230px; padding: 5px; margin: 5px; color: #ffffff; -webkit-box-shadow: 0px 0px 5px #333333; -moz-box-shadow: 0px 0px 5px #333333; box-shadow: 0px 0px 5px #333333; }
+@media only screen and (min-width: 0px) and (max-width: 679px) { .wall .box { width: 100%; } }
+.wall .box .image { float: left; margin-bottom: 0; -webkit-box-shadow: 0px 0px 5px #333333; -moz-box-shadow: 0px 0px 5px #333333; box-shadow: 0px 0px 5px #333333; }
+.wall .box .current-price { float: right; clear: right; }
+.wall .box .bid-count { float: right; }
+
+#footer { margin-top: 10px; padding: 10px 20px 0 20px; -webkit-box-shadow: 0px 0px 5px #333333; -moz-box-shadow: 0px 0px 5px #333333; box-shadow: 0px 0px 5px #333333; }
+@media only screen and (min-width: 0px) and (max-width: 679px) { #footer { visibility: hidden; display: none; margin: 0; padding: 0; } }

@@ -1,0 +1,15 @@
+<div class="ebay wall" data-ss-colspan="4">
+    {% for item in results %}
+        <div class="box" data-selected="false" data-id="{{ item['ItemID'] }}" data-category="{{ item['PrimaryCategory']}}" data-bids="{{ item['BidCount'] }}" data-watch="{{ item['Watch Count'] }}" data-type="{{ item['ListingType'] }}" data-timeleft="{{ item['TimeLeft'] }}">
+            <div class="image"><img src="{{ item['GalleryURL'] }}"></div>
+            <div class="bid-count">Bids:{{ item['BidCount']}}</div>
+            <div class="current-price">${{ item['ConvertedCurrentPrice']['Value'] }}</div>
+            <div class="divider clearfix"></div>
+            <div class="title">{{ item['Title'] }}</div>
+        </div>
+    {% endfor %}
+</div>
+
+<pre>
+    <?php //var_dump($results); ?>
+</pre>

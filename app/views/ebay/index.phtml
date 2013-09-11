@@ -2,11 +2,31 @@
 
 <h2>Ebay</h2>
 
+<h3>Auctions</h3>
+
 <?php echo Tag::form("ebay/search"); ?>
 
 <ul class="four columns">
     <li class="field">
         <?php echo Tag::textField(array("query","class" => "text input", "placeholder" => "Search Auctions")) ?>
+    </li>
+
+    <li class="large primary btn">
+        <?php echo Tag::submitButton("Search") ?>
+    </li>
+</ul>
+
+</form>
+
+<div class="clearfix"></div>
+
+<h3>Popular</h3>
+
+<?php echo Tag::form("ebay/shopping"); ?>
+
+<ul class="four columns">
+    <li class="field">
+        <?php echo Tag::textField(array("query","class" => "text input", "placeholder" => "Search Popular Items")) ?>
     </li>
 
     <li class="large primary btn">

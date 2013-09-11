@@ -1,14 +1,11 @@
 <div class="ebay wall" data-ss-colspan="4">
     {% for item in results %}
-        <div class="box" data-id="{{ item['itemId'][0] }}">
-            <div class="image" data-image="{{ item['galleryURL'][0] }}">
-                <div class="medium default btn load-image"><a href="#">Load Image</a></div>
-            </div>
-            <div class="title">
-                {{ item['title'][0] }}
-            </div>
-            <div class="current-price">{{ item['sellingStatus'][0]['currentPrice'][0]['__value__'] }}</div>
-            <div class="bid-count">{{ item['sellingStatus'][0]['bidCount'][0] }}</div>
+        <div class="box" data-selected="false" data-id="{{ item['itemId'][0] }}" data-category="{{ item['primaryCategory'][0]['categoryId'][0] }}" data-bids="{{ item['sellingStatus'][0]['bidCount'][0] }}" data-bin="{{ item['listingInfo'][0]['buyItNowAvailable'][0] }}" data-type="{{ item['listingInfo'][0]['listingType'][0] }}" data-timeleft="{{ item['sellingStatus'][0]['timeLeft'][0] }}">
+            <div class="image"><img src="{{ item['galleryURL'][0] }}"></div>
+            <div class="bid-count">Bids:{{ item['sellingStatus'][0]['bidCount'][0] }}</div>
+            <div class="current-price">${{ item['sellingStatus'][0]['currentPrice'][0]['__value__'] }}</div>
+            <div class="divider clearfix"></div>
+            <div class="title">{{ item['title'][0] }}</div>
         </div>
     {% endfor %}
 </div>

@@ -1,0 +1,8 @@
+<nav class="navbar" id="nav1">
+    <h1 class="four columns logo">
+        <a href="/">Dir23</a>
+    </h1>
+    <ul class="eight columns">
+        <li><a href="/ebay">Ebay</a></li>
+    </ul>
+</nav>

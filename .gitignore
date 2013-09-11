@@ -2,3 +2,5 @@ library/Zend
 .*un~
 .idea
 app/config/application.ini
+app/compiled-templates/
+public/.sass-cache/
